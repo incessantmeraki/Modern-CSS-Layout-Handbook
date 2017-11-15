@@ -99,3 +99,46 @@ Instead of setting the width of child element, we set property called **flex-bas
     flex-basis: 50%;
   }
 ```
+## Grid
+
+Flex is a 1-D (either row or column) layout system. It is usually used in UI elements in a page. For the entire layout of the main site or complex layout within UI component , grid proves to be more powerful. Grid is a 2D layout system (rows and columns).
+
+Similar to flex, it also have concept of parent(wrapper) and children.
+
+To use grid system, **display** property must be set to grid.
+
+``` css
+  .parent-container {
+    display: grid;
+  }
+```
+Spacing between blocks inside grid is set using **grid-gap** property
+
+``` css
+  .parent-container {
+    display: grid;
+    grid-gap: 2%;
+  }
+```
+
+CSS for children contains the position for row and columns specified by property **grid-row** and **grid-column** which takes value in form of *<startline>/<endline>*
+  
+``` css
+  .r1c1 {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  
+  r2c2 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+```
+Size (width and height) of boxes in the grid can be specified explicity or implicity using **grid-template-columns** and **grid-template-rows** properties. Explicit value can be provided as a comma separated values in units such as px, %. Implicit value can be provided using value such as *repeat(n,unit)* where units such as *fr*(fraction) or *auto* can also be used.
+
+```css
+  parent-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+  }
+```
