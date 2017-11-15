@@ -121,7 +121,7 @@ Spacing between blocks inside grid is set using **grid-gap** property
   }
 ```
 
-CSS for children contains the position for row and columns specified by property **grid-row** and **grid-column** which takes value in form of *<startline>/<endline>*
+CSS for children contains the position for row and columns specified by property **grid-row** and **grid-column** which takes value in form of *startline/endline*
   
 ``` css
   .r1c1 {
