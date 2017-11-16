@@ -123,7 +123,7 @@ Spacing between blocks inside grid is set using **grid-gap** property
 
 CSS for children contains the position for row and columns specified by property **grid-row** and **grid-column** which takes value in form of *startline/endline*
   
-*line numbering starts from the left of box in 1st row 1st column i.e no. of gap to the left of that box is 1*
+*line numbering starts from the left of box in position first row and first column i.e numbering. of gap to the left of that box is 1*
 
 ``` css
   .r1c1 {
@@ -151,6 +151,18 @@ Instead of separately specifying rows and column separately, they can be specifi
   
 Also, **order** property can be used for grid items in a similar way it was used for flexbox items.
 
+``` css
+  .r1c1 {
+    grid-area: 1/1/2/2;
+    order: 1;
+  }
+  
+  r2c2 {
+    grid-area:: 1/2/2/3;
+    order: 0;
+  }
+  ```
+
 Size (width and height) of boxes in the grid can be specified explicity or implicity using **grid-template-columns** and **grid-template-rows** properties. Excpicit units includes px, %, em, rem . Implicit value follows a format xfr where fr refers to fraction and x is number. Both explicit and explicit values can used together by separating them with space.
 
 Also, there is something called repeat(x,y) which repeats y x times.
@@ -172,5 +184,5 @@ Above two properties can be combined into one with **grid-template** which takes
 
 To get real sense of above commands play, with these sites:
 
-[Flexbox Froggy](https://flexboxfroggy.com/)
-[Grid Garden](https://flexboxfroggy.com/)
+- [Flexbox Froggy](https://flexboxfroggy.com/)
+- [Grid Garden](https://flexboxfroggy.com/)
