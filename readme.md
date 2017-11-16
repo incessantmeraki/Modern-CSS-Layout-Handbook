@@ -123,6 +123,8 @@ Spacing between blocks inside grid is set using **grid-gap** property
 
 CSS for children contains the position for row and columns specified by property **grid-row** and **grid-column** which takes value in form of *startline/endline*
   
+*line numbering starts from the left of box in 1st row 1st column i.e no. of gap to the left of that box is 1*
+
 ``` css
   .r1c1 {
     grid-row: 1/2;
@@ -134,11 +136,41 @@ CSS for children contains the position for row and columns specified by property
     grid-column: 2/3;
   }
 ```
-Size (width and height) of boxes in the grid can be specified explicity or implicity using **grid-template-columns** and **grid-template-rows** properties. Explicit value can be provided as a comma separated values in units such as px, %. Implicit value can be provided using value such as *repeat(n,unit)* where units such as *fr*(fraction) or *auto* can also be used.
+
+Instead of separately specifying rows and column separately, they can be specified at once using **grid-area** which takes value in the format *startrow/startcolumn/endrow/endcolumn*
+
+``` css
+  .r1c1 {
+    grid-area: 1/1/2/2;
+  }
+  
+  r2c2 {
+    grid-area:: 1/2/2/3;
+  }
+  ```
+  
+Also, **order** property can be used for grid items in a similar way it was used for flexbox items.
+
+Size (width and height) of boxes in the grid can be specified explicity or implicity using **grid-template-columns** and **grid-template-rows** properties. Excpicit units includes px, %, em, rem . Implicit value follows a format xfr where fr refers to fraction and x is number. Both explicit and explicit values can used together by separating them with space.
+
+Also, there is something called repeat(x,y) which repeats y x times.
 
 ```css
   parent-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 50px 1fr 1fr 1fr;
     grid-template-rows: repeat(5, auto);
   }
 ```
+
+Above two properties can be combined into one with **grid-template** which takes value in format  *grid-template-rows / grid-template-columns*
+```css
+  parent-container {
+    grid-template: 50px 1fr 1fr 1fr / repeat(5, auto) ;
+  }
+```
+## Lab
+
+To get real sense of above commands play, with these sites:
+
+[Flexbox Froggy](https://flexboxfroggy.com/)
+[Grid Garden](https://flexboxfroggy.com/)
